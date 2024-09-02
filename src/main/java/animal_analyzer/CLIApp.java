@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Classe principal do aplicativo CLI para análise de animais.
+ * O aplicativo aceita argumentos para definir a profundidade da árvore,
+ * a frase a ser analisada e um modo verbose para exibir tempos de execução.
+ */
 public class CLIApp {
     public static void main(String[] args) {
         if (args.length < 4) {
