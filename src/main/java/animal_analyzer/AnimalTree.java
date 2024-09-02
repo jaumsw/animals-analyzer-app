@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class AnimalTree {
     private Animal root;
@@ -59,9 +61,15 @@ public class AnimalTree {
     }
 
     // Método para encontrar um animal pelo nome
+    private String removeAccents(String text) {
+        String normalized = Normalizer.normalize(text, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        return pattern.matcher(normalized).replaceAll("");
+    }
+
     public Animal findAnimal(Animal root, String word) {
-        String normalizedRootName = root.getName().replaceAll("[^a-zA-Z]", "").toLowerCase();
-        String normalizedWord = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        String normalizedRootName = removeAccents(root.getName()).replaceAll("[^a-zA-Z]", "").toLowerCase();
+        String normalizedWord = removeAccents(word).replaceAll("[^a-zA-Z]", "").toLowerCase();
         if (normalizedRootName.equals(normalizedWord)) {
             return root;
         }
