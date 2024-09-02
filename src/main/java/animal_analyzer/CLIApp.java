@@ -21,6 +21,7 @@ public class CLIApp {
 
         String phrase = args[3];
 
+        long startTime = System.currentTimeMillis();
         AnimalTree tree;
         try {
             tree = new AnimalTree("src/main/dicts/animals.json");
@@ -28,10 +29,15 @@ public class CLIApp {
             System.out.println("Erro ao carregar a árvore de animais");
             return;
         }
-
-        long startTime = System.currentTimeMillis();
-        List<Animal> animals = tree.getAnimalsAtDepth(depth);
         long endTime = System.currentTimeMillis();
+
+        if (verbose) {
+            System.out.println("Tempo de carregamento dos parâmetros: " + (endTime - startTime) + "ms");
+        }
+
+        startTime = System.currentTimeMillis();
+        List<Animal> animals = tree.getAnimalsAtDepth(depth);
+        endTime = System.currentTimeMillis();
 
         if (animals.isEmpty()) {
             System.out.println("0");
@@ -39,7 +45,7 @@ public class CLIApp {
         }
 
         if (verbose) {
-            System.out.println("Tempo de carregamento dos parâmetros: " + (endTime - startTime) + "ms");
+            System.out.println("Tempo de carregamento dos animais: " + (endTime - startTime) + "ms");
         }
 
         startTime = System.currentTimeMillis();
