@@ -1,136 +1,117 @@
 {
-  "name": "Natureza",
+  "name": "Animais",
   "children": [
     {
-      "name": "Flora",
+      "name": "Mamíferos",
       "children": [
         {
-          "name": "Árvores",
+          "name": "Carnívoros",
           "children": [
             {
-              "name": "Frutíferas",
+              "name": "Felinos",
               "children": [
                 {
-                  "name": "Maçãs"
+                  "name": "Leões"
                 },
                 {
-                  "name": "Laranjas"
+                  "name": "Tigres"
                 },
                 {
-                  "name": "Bananas"
-                }
-              ]
-            },
-            {
-              "name": "Coníferas",
-              "children": [
-                {
-                  "name": "Pinheiros"
+                  "name": "Jaguars"
                 },
                 {
-                  "name": "Cedros"
-                },
-                {
-                  "name": "Ciprestes"
+                  "name": "Leopardos"
                 }
               ]
             }
           ]
         },
         {
-          "name": "Arbustos",
+          "name": "Herbívoros",
           "children": [
             {
-              "name": "Decorativos",
+              "name": "Equídeos",
               "children": [
                 {
-                  "name": "Hibiscos"
+                  "name": "Cavalos"
                 },
                 {
-                  "name": "Azáleas"
+                  "name": "Zebras"
+                },
+                {
+                  "name": "Asnos"
                 }
               ]
             },
             {
-              "name": "Frutíferos",
+              "name": "Bovídeos",
               "children": [
                 {
-                  "name": "Morangos"
+                  "name": "Bois"
                 },
                 {
-                  "name": "Framboesas"
+                  "name": "Búfalos"
+                },
+                {
+                  "name": "Antílopes"
+                },
+                {
+                  "name": "Cabras"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "name": "Primatas",
+          "children": [
+            {
+              "name": "Gorilas"
+            },
+            {
+              "name": "Chimpanzés"
+            },
+            {
+              "name": "Orangotangos"
             }
           ]
         }
       ]
     },
     {
-      "name": "Fauna",
+      "name": "Aves",
       "children": [
         {
-          "name": "Invertebrados",
+          "name": "Rapinas",
           "children": [
             {
-              "name": "Insetos",
-              "children": [
-                {
-                  "name": "Abelhas"
-                },
-                {
-                  "name": "Borboletas"
-                }
-              ]
+              "name": "Águias"
             },
             {
-              "name": "Aracnídeos",
-              "children": [
-                {
-                  "name": "Aranhas"
-                },
-                {
-                  "name": "Escorpiões"
-                }
-              ]
+              "name": "Falcões"
+            },
+            {
+              "name": "Corujas"
+            },
+            {
+              "name": "Milhafres"
             }
           ]
         },
         {
-          "name": "Vertebrados",
+          "name": "Pássaros",
           "children": [
             {
-              "name": "Peixes",
-              "children": [
-                {
-                  "name": "Salmões"
-                },
-                {
-                  "name": "Atuns"
-                }
-              ]
+              "name": "Canários"
             },
             {
-              "name": "Mamíferos",
-              "children": [
-                {
-                  "name": "Felinos"
-                },
-                {
-                  "name": "Canídeos"
-                }
-              ]
+              "name": "Papagaios"
             },
             {
-              "name": "Aves",
-              "children": [
-                {
-                  "name": "Passáros"
-                },
-                {
-                  "name": "Rapinas"
-                }
-              ]
+              "name": "Pardais"
+            },
+            {
+              "name": "Rouxinóis"
             }
           ]
         }

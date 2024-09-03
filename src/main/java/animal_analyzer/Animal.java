@@ -39,12 +39,7 @@ public class Animal {
         return children;
     }
 
-    /**
-     * Adiciona um filho à lista de filhos do animal.
-     *
-     * @param child o animal filho a ser adicionado
-     */
-    public void addChild(Animal child) {
-        children.add(child);
+    public List<Animal> getParent() {
+        return children;
     }
 }

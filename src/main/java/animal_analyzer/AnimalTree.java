@@ -43,9 +43,9 @@ public class AnimalTree {
      * @param child o animal filho
      * @return a lista de pais do animal
      */
-    public List<Animal> getParents(Animal root, Animal child) {
+    public List<Animal> getParents(Animal root, Animal child, int maxDepth) {
         List<Animal> parents = new ArrayList<>();
-        getParents(root, child, parents);
+        getParents(root, child, parents, 0, maxDepth);
         return parents;
     }
 
@@ -56,17 +56,26 @@ public class AnimalTree {
      * @param child o animal filho
      * @param parents a lista de pais a ser preenchida
      */
-    private void getParents(Animal root, Animal child, List<Animal> parents) {
-        if (root.getChildren() != null) {
-            for (Animal kid : root.getChildren()) {
-                if (kid.equals(child)) {
+    private boolean getParents(Animal root, Animal child, List<Animal> parents, int currentDepth, int maxDepth) {
+
+    if (root.getChildren() != null) {
+        for (Animal kid : root.getChildren()) {
+            if (kid.equals(child)) {
+                if (currentDepth == maxDepth - 1) {
                     parents.add(root);
-                    return;
                 }
-                getParents(kid, child, parents);
+                return true;
+            }
+            if (getParents(kid, child, parents, currentDepth + 1, maxDepth)) {
+                if (currentDepth == maxDepth - 1) {
+                    parents.add(root);
+                }
+                return true;
             }
         }
     }
+    return false;
+}
 
     /**
      * Obtém os animais em uma profundidade específica.
