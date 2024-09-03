@@ -8,7 +8,7 @@ O **Animal Analyzer** é um aplicativo de linha de comando (CLI) desenvolvido em
 
 #### Pré-requisitos
 
-- Java 18
+- Java 18+
 - Maven
 
 #### Passos para Compilar e Executar
