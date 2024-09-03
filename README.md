@@ -15,8 +15,8 @@ O **Animal Analyzer** é um aplicativo de linha de comando (CLI) desenvolvido em
 
 1. **Clone o repositório:**
    ```sh
-   git clone <[URL_DO_REPOSITORIO](https://github.com/jaumsw/animals-analyzer-app.git)>
-   cd <animals-analyzer-app>
+   git clone https://github.com/jaumsw/animals-analyzer-app.git
+   cd animals-analyzer-app
    ```
 
 2. **Compile o projeto usando Maven:**
