@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Classe principal do aplicativo CLI para análise de animais.
+ * O aplicativo aceita argumentos para definir a profundidade da árvore,
+ * a frase a ser analisada e um modo verbose para exibir tempos de execução.
+ */
 public class CLIApp {
     public static void main(String[] args) {
         if (args.length < 4) {
@@ -35,17 +40,11 @@ public class CLIApp {
             System.out.println("Tempo de carregamento dos parâmetros: " + (endTime - startTime) + "ms");
         }
 
-        startTime = System.currentTimeMillis();
         List<Animal> animals = tree.getAnimalsAtDepth(depth);
-        endTime = System.currentTimeMillis();
 
         if (animals.isEmpty()) {
             System.out.println("0");
             return;
-        }
-
-        if (verbose) {
-            System.out.println("Tempo de carregamento dos animais: " + (endTime - startTime) + "ms");
         }
 
         startTime = System.currentTimeMillis();
@@ -53,8 +52,8 @@ public class CLIApp {
         for (String word : phrase.split("\\s+")) {
             Animal found = tree.findAnimal(tree.getRoot(), word);
             if (found != null) {
-                List<Animal> parents = tree.getParents(tree.getRoot(), found);
-                for (int i = 0; i < depth - 1; i++) {
+                List<Animal> parents = tree.getParents(tree.getRoot(), found, depth);
+                for (int i = 0; i < depth ; i++) {
                     if (parents.size() > i) {
                         counts.put(parents.get(i).getName(), counts.getOrDefault(parents.get(i).getName(), 0) + 1);
                     }
