@@ -37,10 +37,11 @@ public class AnimalTree {
     }
 
     /**
-     * Obtém os pais de um animal específico.
+     * Obtém os pais de um animal específico até uma profundidade máxima.
      *
      * @param root o animal raiz
      * @param child o animal filho
+     * @param maxDepth a profundidade máxima
      * @return a lista de pais do animal
      */
     public List<Animal> getParents(Animal root, Animal child, int maxDepth) {
@@ -50,32 +51,34 @@ public class AnimalTree {
     }
 
     /**
-     * Método recursivo auxiliar para obter os pais de um animal.
+     * Método recursivo auxiliar para obter os pais de um animal até uma profundidade máxima.
      *
      * @param root o animal raiz
      * @param child o animal filho
      * @param parents a lista de pais a ser preenchida
+     * @param currentDepth a profundidade atual
+     * @param maxDepth a profundidade máxima
+     * @return true se o filho for encontrado, false caso contrário
      */
     private boolean getParents(Animal root, Animal child, List<Animal> parents, int currentDepth, int maxDepth) {
-
-    if (root.getChildren() != null) {
-        for (Animal kid : root.getChildren()) {
-            if (kid.equals(child)) {
-                if (currentDepth == maxDepth - 1) {
-                    parents.add(root);
+        if (root.getChildren() != null) {
+            for (Animal kid : root.getChildren()) {
+                if (kid.equals(child)) {
+                    if (currentDepth == maxDepth - 1) {
+                        parents.add(root);
+                    }
+                    return true;
                 }
-                return true;
-            }
-            if (getParents(kid, child, parents, currentDepth + 1, maxDepth)) {
-                if (currentDepth == maxDepth - 1) {
-                    parents.add(root);
+                if (getParents(kid, child, parents, currentDepth + 1, maxDepth)) {
+                    if (currentDepth == maxDepth - 1) {
+                        parents.add(root);
+                    }
+                    return true;
                 }
-                return true;
             }
         }
+        return false;
     }
-    return false;
-}
 
     /**
      * Obtém os animais em uma profundidade específica.
